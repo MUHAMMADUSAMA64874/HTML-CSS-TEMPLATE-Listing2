@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eye-Catching Product Listing</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Custom styles go here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eff7ff; /* Light color for the background */
+      color: #231123; /* Dark color for text */
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* Set minimum height to full viewport height */
+      position: relative; /* Ensure the footer positioning works correctly */
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .jumbotron {
+      background-color: #82204a; /* Dark color for the jumbotron */
+      color: #fff;
+      padding: 50px;
+      text-align: center;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #558c8c; /* Medium color for the section title */
+    }
+
+    .gallery-thumbnail img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .best-items {
+      background-color: #558c8c; /* Medium color for the best-items section */
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .best-items img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      background-color: #e8db7d; /* Light color for the call-to-action button */
+      color: #231123; /* Dark color for the call-to-action button text */
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #82204a; /* Dark color on hover */
+      color: #fff;
+    }
+
+    .footer {
+      background-color: #231123; /* Dark color for the footer */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+      clear: both; /* Clear float to prevent overlapping with sidebars */
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    /* Animation styles */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Apply animation to the gallery images */
+    .img-fluid.animated {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Animation on mouse hover */
+    .thumbnail img:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+
+    /* Update navigation bar color */
+    .navbar {
+      background-color: #558c8c; /* Medium color for the navbar */
+    }
+
+    .navbar-brand {
+      color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      background-color: #558c8c; /* Medium color for the sidebars */
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+      width: 150px; /* Adjust the width to your preference */
+    }
+
+    .sidebar-left {
+      float: left; /* Float left for left sidebar */
+      margin-right: 20px; /* Add margin to create space between content and sidebar */
+    }
+
+    .sidebar-right {
+      float: right; /* Float right for right sidebar */
+      margin-left: 20px; /* Add margin to create space between content and sidebar */
+    }
+
+    /* About Us and Contact Us sections */
+    .section-content {
+      margin-bottom: 30px;
+    }
+
+    .about-content,
+    .contact-content {
+      background-color: #e8db7d; /* Light color for the about and contact sections */
+      color: #231123; /* Dark color for the text in about and contact sections */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Different Gallery with animations */
+    .image-gallery {
+      margin-bottom: 30px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery .img-container {
+      position: relative;
+      display: inline-block;
+      width: 33%;
+      padding: 5px;
+    }
+
+    .img-container .img-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(34, 17, 35, 0.8); /* Dark color for the image overlay */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      border-radius: 5px;
+      transition: opacity 0.3s ease;
+    }
+
+    .img-container:hover .img-overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Your Brand</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron" id="home">
+      <h1>Welcome to Our Eye-Catching Product Listing</h1>
+      <p>This website is designed to showcase our stylish and high-quality products.</p>
+      <button class="cta-button">Explore Now</button>
+    </div>
+
+    <!-- Sidebar Left -->
+    <div class="sidebar sidebar-left">
+      <h3>Left Sidebar</h3>
+      <p>Random item 1</p>
+      <p>Random item 2</p>
+      <p>Random item 3</p>
+    </div>
+
+    <!-- Sidebar Right -->
+    <div class="sidebar sidebar-right">
+      <h3>Right Sidebar</h3>
+      <p>Random item 4</p>
+      <p>Random item 5</p>
+      <p>Random item 6</p>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="section" id="about">
+      <h2 class="section-title">About Us</h2>
+      <div class="row section-content">
+        <div class="col-md-6 about-content">
+          <h3>About Our Company</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia tellus velit, id fermentum felis efficitur quis. Quisque euismod quam ac purus vestibulum aliquam. In ac diam eget velit pharetra vestibulum. Fusce sed est ac mi commodo venenatis id ut neque.</p>
+        </div>
+        <div class="col-md-6 about-content">
+          <h3>Our Mission</h3>
+          <p>Nulla fermentum nisl sit amet dolor tincidunt, in iaculis mauris feugiat. Quisque sed quam id nulla iaculis tincidunt. Duis non cursus arcu. Suspendisse potenti. Nam non urna dolor.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section" id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="row section-content">
+        <div class="col-md-6 contact-content">
+          <h3>Contact Information</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Address: 123 Main Street, City, Country</p>
+        </div>
+        <div class="col-md-6 contact-content">
+          <h3>Get in Touch</h3>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="section" id="gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="row image-gallery">
+        <div class="col-md-4 mb-3 img-container">
+          <img src="https://dummyimage.com/400x300/231123/fff" alt="Product 1" class="img-fluid rounded animated">
+          <div class="img-overlay">
+            Thumbnail image 1
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 img-container">
+          <img src="https://dummyimage.com/400x300/82204a/fff" alt="Product 2" class="img-fluid rounded animated">
+          <div class="img-overlay">
+            Thumbnail image 2
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 img-container">
+          <img src="https://dummyimage.com/400x300/558c8c/fff" alt="Product 3" class="img-fluid rounded animated">
+          <div class="img-overlay">
+            Thumbnail image 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
